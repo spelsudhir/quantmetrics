@@ -123,8 +123,6 @@ Additional strategy tooling:
 
 ---
 
----
-
 ## Tech Stack
 
 | Layer | Library |
