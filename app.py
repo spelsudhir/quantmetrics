@@ -32,35 +32,42 @@ TRADING_DAYS = 252
 
 hide_st_style = """
 <style>
-    /* Hide Main Menu */
+    /* Hide Streamlit menu */
     #MainMenu {
         display: none !important;
     }
-
-    /* Hide footer */
+    /* Hide footer / Streamlit branding */
     footer {
         display: none !important;
+        visibility: hidden !important;
     }
-
-    /* Keep header for sidebar collapse button */
-    header {
-        background: transparent !important;
-    }
-
     /* Hide Deploy button */
     [data-testid="stAppDeployButton"] {
         display: none !important;
     }
-
-    /* Keep sidebar collapse/expand button */
+    /* Hide GitHub / Fork controls */
+    [data-testid="stToolbar"] {
+        display: none !important;
+    }
+    /* Keep the header functional */
+    header {
+        background: transparent !important;
+        height: 0 !important;
+        min-height: 0 !important;
+    }
+    /* Preserve sidebar collapse button */
     [data-testid="stSidebarCollapseButton"] {
         display: flex !important;
         visibility: visible !important;
         opacity: 1 !important;
+        /* Put it above the app content */
+        position: fixed !important;
+        z-index: 999999 !important;
+        top: 10px !important;
+        left: 10px !important;
     }
 </style>
 """
-
 st.markdown(hide_st_style, unsafe_allow_html=True)
 
 # ---------------------------------------------------------------------------
