@@ -31,7 +31,7 @@ EPS = 1e-8
 TRADING_DAYS = 252
 
 # ---------------------------------------------------------------------------
-# PAGE CONFIG & GLOBAL STYLING
+# PAGE CONFIG & STREAMLIT SHELL CLEANUP
 # ---------------------------------------------------------------------------
 
 st.set_page_config(
@@ -40,6 +40,100 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="expanded",
 )
+
+# Keep the left sidebar collapse control while minimizing Streamlit's
+# production/developer toolbar.
+try:
+    st.set_option("client.toolbarMode", "minimal")
+except Exception:
+    pass
+
+hide_st_style = """
+<style>
+
+/* ---------------------------------------------------------
+   KEEP STREAMLIT HEADER ALIVE
+   The sidebar expand button is part of Streamlit's header UI.
+   --------------------------------------------------------- */
+
+[data-testid="stHeader"],
+header.stAppHeader {
+    display: flex !important;
+    visibility: visible !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+
+/* ---------------------------------------------------------
+   HIDE ONLY UNWANTED STREAMLIT CONTROLS
+   Do NOT hide the whole toolbar/header.
+   --------------------------------------------------------- */
+
+#MainMenu,
+[data-testid="stAppDeployButton"],
+[data-testid="stStatusWidget"],
+.stDeployButton {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+
+/* ---------------------------------------------------------
+   HIDE GITHUB / FORK
+   --------------------------------------------------------- */
+
+header a[href*="github.com"],
+header a[href*="/fork"],
+header button[aria-label*="Fork"],
+header [title*="Fork"],
+header [data-testid*="Fork"],
+header [data-testid*="GitHub"] {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+
+/* ---------------------------------------------------------
+   KEEP SIDEBAR COLLAPSE / EXPAND CONTROLS
+   Expanded + collapsed states
+   --------------------------------------------------------- */
+
+[data-testid="stSidebarCollapseButton"],
+[data-testid="stExpandSidebarButton"],
+[data-testid="stBaseButton-headerNoPadding"] {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+
+/* Make sure the actual button is clickable */
+
+[data-testid="stExpandSidebarButton"] button,
+[data-testid="stBaseButton-headerNoPadding"] button {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+
+/* ---------------------------------------------------------
+   STREAMLIT FOOTER
+   --------------------------------------------------------- */
+
+footer {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+</style>
+"""
+
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
 
 BG = "#0e1117"
 CARD = "#1e222d"
@@ -3514,7 +3608,7 @@ st.sidebar.markdown(
         </div>
         <div>
             <div class="qm-brand-name">QuantMetrics Pro</div>
-            <div class="qm-brand-sub">Market Intelligence Terminal</div>
+            <div class="qm-brand-sub">Quantitative Backtesting & Risk Analytics Platform</div>
         </div>
     </div>""",
     unsafe_allow_html=True,
