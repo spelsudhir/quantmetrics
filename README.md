@@ -102,8 +102,16 @@ Additional strategy tooling:
 
 ## Screenshots
 
-> _Add screenshots or a GIF walkthrough here, e.g._
-> `docs/screenshot-dashboard.png`, `docs/screenshot-strategy.png`
+<img width="1440" height="900" alt="Screenshot 2026-09-13 at 1 21 12 AM" src="https://github.com/user-attachments/assets/1a781aca-6870-41f9-b3fa-c301e9dc4ca0" />
+
+<img width="1440" height="900" alt="Screenshot 2026-09-13 at 1 21 32 AM" src="https://github.com/user-attachments/assets/f225179d-99fa-4d83-8c36-15660cd2eab9" />
+
+<img width="1440" height="900" alt="Screenshot 2026-09-13 at 1 22 06 AM" src="https://github.com/user-attachments/assets/39743096-3118-4f5d-966c-1a5e73ea9a01" />
+
+<img width="1440" height="900" alt="Screenshot 2026-09-13 at 1 22 15 AM" src="https://github.com/user-attachments/assets/746faf38-2f90-41ac-b129-9c21958f627c" />
+
+<img width="1440" height="900" alt="Screenshot 2026-09-13 at 1 22 40 AM" src="https://github.com/user-attachments/assets/ba8d4611-91db-441e-9fc5-f50ca117a647" />
+
 
 ---
 
@@ -199,7 +207,6 @@ QuantMetrics Pro is provided for **research, education, and decision-support pur
 
 - [ ] Multi-asset portfolio construction and correlation-aware risk budgeting
 - [ ] Walk-forward optimization for strategy parameters
-- [ ] PDF/Word tear-sheet export
 - [ ] Options analytics (IV surface, Greeks)
 - [ ] Persistent watchlists and saved strategy configurations
 
