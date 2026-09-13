@@ -144,8 +144,8 @@ Additional strategy tooling:
 ### Installation
 
 ```bash
-git clone https://github.com/spelsudhir/quantmetrics-pro.git
-cd quantmetrics-pro
+git clone https://github.com/spelsudhir/quantmetrics.git
+cd quantmetrics
 python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
@@ -169,6 +169,8 @@ streamlit run app.py
 ```
 
 Then open the local URL Streamlit prints (typically `http://localhost:8501`).
+
+Or, simply go to https://quantmetrics-pro.streamlit.app/ for live demo.
 
 ---
 
